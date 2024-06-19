@@ -20,33 +20,35 @@ function executarConsulta(sql, params, res, erroMsg) {
   });
 }
 
-// Rota para buscar todas as tarefas
-router.get('/', (req, res) => {
-  executarConsulta('SELECT * FROM tarefa', [], res, "Erro na consulta de tarefas");
+
+
+// Rota para buscar todas as musicas
+router.get('/musicas', (req, res) => {
+  executarConsulta('SELECT * FROM musica', [], res, "Erro ao encontrar música");
 });
 
-// Rota para buscar uma tarefa específica
+// Rota para buscar uma musica específica
 router.get("/:id", (req, res) => {
   const id = req.params.id;
-  executarConsulta('SELECT * FROM tarefa WHERE id = ?', [id], res, "Erro na consulta de tarefa");
+  executarConsulta('SELECT * FROM musica WHERE id = ?', [id], res, "Erro na consulta de musica");
 });
 
-// Rota para criar uma nova tarefa
+// Rota para criar uma nova musica
 router.post('/', (req, res) => {
   const { titulo, descricao } = req.body;
-  executarConsulta('INSERT INTO tarefa (titulo, descricao) VALUES (?, ?)', [titulo, descricao], res, "Erro no cadastro de tarefa!");
+  executarConsulta('INSERT INTO musica ( ) VALUES (?, ?)', [titulo, descricao], res, "Erro no cadastro de musica!");
 });
 
-// Rota para deletar uma tarefa
+// Rota para deletar uma musica
 router.delete("/:id", (req, res) => {
-  const tarefaId = req.params.id;
-  executarConsulta('DELETE FROM tarefa WHERE id = ?', [tarefaId], res, 'Erro ao deletar tarefa');
+  const musicaId = req.params.id;
+  executarConsulta('DELETE FROM musica WHERE id = ?', [musicaId], res, 'Erro ao deletar musica');
 });
 
-// Rota para atualizar uma tarefa
+// Rota para atualizar uma musica
 router.put('/', (req, res) => {
   const { id, titulo, descricao } = req.body;
-  executarConsulta('UPDATE tarefa SET titulo = ?, descricao = ? WHERE id = ?', [titulo, descricao, id], res, "Erro ao atualizar tarefa");
+  executarConsulta('UPDATE musica SET titulo = ?, descricao = ? WHERE id = ?', [titulo, descricao, id], res, "Erro ao atualizar musica");
 });
 
 module.exports = router;
