@@ -29,34 +29,34 @@ function executarComandoDevolvendoId(sql, params ) {
   return resultado;
 }
 
-// Rota para buscar todas as musicas
+// Rota para buscar todas os artistas
 router.get('/', (req, res) => {
-  executarConsulta('SELECT * FROM compositor', [], res, "Erro ao encontrar compositor");
+  executarConsulta('SELECT * FROM artista', [], res, "Erro ao encontrar música");
 });
 
-// Rota para buscar uma compositor específica
+// Rota para buscar uma artista específica
 router.get("/:nome", (req, res) => {
   const nome = req.params.nome;
-  executarConsulta("SELECT * FROM compositor WHERE nome_compositor like '?%'", [nome], res, "Erro na consulta de compositor");
+  executarConsulta("SELECT * FROM artista WHERE nome_artista like '?%'", [nome], res, "Erro na consulta de artista");
 });
 
-// Rota para criar uma novo compositor
+// Rota para criar uma novo artista
 router.post('/', (req, res) => {
   const {nome, endereco} = req.body;
   let id = executarComandoDevolvendoId('INSERT INTO endereco (rua, cidade, estado) VALUES (?,?,?)', [endereco.rua, endereco.cidade, endereco.estado]);
-  executarConsulta('INSERT INTO compositor ( id, nome_compositor, id_endereco ) VALUES (?, ?, ?)', [ id, nome, endereco], res, "Erro no cadastro de compositor!");
+  executarConsulta('INSERT INTO artista ( id, nome_artista, id_endereco ) VALUES (?, ?, ?)', [ id, nome, endereco], res, "Erro no cadastro de artista!");
 });
 
-// Rota para deletar uma compositor
+// Rota para deletar uma artista
 router.delete("/:id", (req, res) => {
-  const compositorId = req.params.id;
-  executarConsulta('DELETE FROM compositor WHERE id = ?', [compositorId], res, 'Erro ao deletar compositor');
+  const artistaId = req.params.id;
+  executarConsulta('DELETE FROM artista WHERE id = ?', [artistaId], res, 'Erro ao deletar artista');
 });
 
-// Rota para atualizar uma compositor
+// Rota para atualizar uma artista
 router.put('/', (req, res) => {
   const { id, nome, endereco } = req.body;
-  executarConsulta('UPDATE compositor SET nome_compositor = ?, id_endereco= ? WHERE id = ?', [id, nome, endereco], res, "Erro ao atualizar compositor");
+  executarConsulta('UPDATE artista SET nome_artista = ?, id_endereco= ? WHERE id = ?', [id, nome, endereco], res, "Erro ao atualizar artista");
 });
 
 module.exports = router;

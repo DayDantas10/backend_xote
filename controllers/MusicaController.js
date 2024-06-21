@@ -21,7 +21,6 @@ function executarConsulta(sql, params, res, erroMsg) {
 }
 
 
-
 // Rota para buscar todas as musicas
 router.get('/musicas', (req, res) => {
   executarConsulta('SELECT * FROM musica', [], res, "Erro ao encontrar música");

@@ -20,33 +20,33 @@ function executarConsulta(sql, params, res, erroMsg) {
   });
 }
 
-// Rota para buscar todas as musicas
+// Rota para buscar todas os generos
 router.get('/', (req, res) => {
-  executarConsulta('SELECT * FROM genero', [], res, "Erro ao encontrar música");
+  executarConsulta('SELECT * FROM genero', [], res, "Erro ao encontrar o gênero");
 });
 
 // Rota para buscar uma genero específica
 router.get("/:id", (req, res) => {
   const id = req.params.id;
-  executarConsulta('SELECT * FROM genero WHERE id = ?', [id], res, "Erro na consulta de genero");
+  executarConsulta('SELECT * FROM genero WHERE id = ?', [id], res, "Erro na consulta de gênero");
 });
 
-// Rota para criar uma nova genero
+// Rota para criar um novo genero
 router.post('/', (req, res) => {
   const {nome} = req.body;
-  executarConsulta('INSERT INTO genero (nome_genero) VALUES (?)', [nome], res, "Erro no cadastro de genero!");
+  executarConsulta('INSERT INTO genero (nome_genero) VALUES (?)', [nome], res, "Erro no cadastro de gênero");
 });
 
-// Rota para deletar uma genero
+// Rota para deletar um genero
 router.delete("/:id", (req, res) => {
   const generoId = req.params.id;
-  executarConsulta('DELETE FROM genero WHERE id = ?', [generoId], res, 'Erro ao deletar genero');
+  executarConsulta('DELETE FROM genero WHERE id = ?', [generoId], res, 'Erro ao deletar gênero');
 });
 
-// Rota para atualizar uma genero
+// Rota para atualizar um genero
 router.put('/', (req, res) => {
   const { id, nome} = req.body;
-  executarConsulta('UPDATE genero nome= ? WHERE id = ?', [nome, id], res, "Erro ao atualizar genero");
+  executarConsulta('UPDATE genero nome= ? WHERE id = ?', [nome, id], res, "Erro ao atualizar gênero");
 });
 
 module.exports = router;
