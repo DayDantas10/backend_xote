@@ -22,7 +22,7 @@ function executarConsulta(sql, params, res, erroMsg) {
 
 
 // Rota para buscar todas as musicas
-router.get('/musicas', (req, res) => {
+router.get('/', (req, res) => {
   executarConsulta('SELECT * FROM musica', [], res, "Erro ao encontrar música");
 });
 
@@ -34,8 +34,8 @@ router.get("/:id", (req, res) => {
 
 // Rota para criar uma nova musica
 router.post('/', (req, res) => {
-  const { titulo, descricao } = req.body;
-  executarConsulta('INSERT INTO musica ( ) VALUES (?, ?)', [titulo, descricao], res, "Erro no cadastro de musica!");
+  const {nome,artista, compositor, genero, letra} = req.body;
+  executarConsulta('INSERT INTO musica (nome, id_artista, id_compositor, id_genero, letra) VALUES (?, ?, ?, ?,?)', [nome,artista, compositor, genero, letra], res, "Erro no cadastro de musica!");
 });
 
 // Rota para deletar uma musica
@@ -46,8 +46,8 @@ router.delete("/:id", (req, res) => {
 
 // Rota para atualizar uma musica
 router.put('/', (req, res) => {
-  const { id, titulo, descricao } = req.body;
-  executarConsulta('UPDATE musica SET titulo = ?, descricao = ? WHERE id = ?', [titulo, descricao, id], res, "Erro ao atualizar musica");
+  const { id, nome,artista, compositor, genero, letra} = req.body;
+  executarConsulta('UPDATE musica SET nome = ?, artista = ?, compositor = ?, genero = ? , letra = ? WHERE id = ?', [nome,artista, compositor, genero, letra, id], res, "Erro ao atualizar musica");
 });
 
 module.exports = router;

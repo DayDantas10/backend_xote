@@ -29,6 +29,7 @@ create table musica (
     id_artista int,
     id_compositor int,
     id_genero int,
+    nome varchar(50),
     letra varchar (65535),
     FOREIGN KEY (id_artista) REFERENCES artista(id),
     FOREIGN KEY (id_compositor) REFERENCES compositor(id),

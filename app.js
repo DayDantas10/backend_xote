@@ -3,7 +3,8 @@ const cors = require('cors');
 const musicaRouter = require('./controllers/MusicaController');
 const generoRouter = require('./controllers/GeneroController');
 const compositorRouter = require('./controllers/CompositorController');
-const compositorRouter = require('./controllers/ArtistaController');
+const artistaRouter = require('./controllers/ArtistaController');
+const entrevistaRouter = require('./controllers/EntrevistaController');
 const loginRouter = require('./controllers/LoginController');
 
 
@@ -20,7 +21,8 @@ app.use(cors());
 app.use("/musicas", musicaRouter);
 app.use("/generos", generoRouter);
 app.use("/compositores", compositorRouter);
-app.use("/artistas", compositorRouter);
+app.use("/artistas", artistaRouter);
+app.use("/entrevistas", entrevistaRouter);
 app.use("/login", loginRouter);
 
 // Define a porta do servidor, com um fallback para a porta 3000 se não estiver definida.
