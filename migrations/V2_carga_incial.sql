@@ -8,35 +8,32 @@ DELETE FROM genero WHERE id = 1;
 INSERT into compositor (nome_compositor, id_endereco) values('Dayane', 'Rua Sei la o que ');
 INSERT into artista(nome_artista, id_endereco) values('Nanda', '2');
 
-INSERT INTO musica (nome, id_artista, id_compositor, id_genero, letra) VALUES ('Maravilhosa', 1,1 ,1, 
-                                                                               'De cabelo preto, de chapéu e bota
-Ô, do jeitinho que o vaqueiro gosta
-Diferenciada, isso que é mulher
-Corre vaquejada, dança forró e toma Dreher
+INSERT INTO musica (nome, id_artista, id_compositor, id_genero, letra) VALUES ('Boate Azul', 1,1 ,1, 
+                                                                               'Doente de amor, procurei remédio na vida noturna
+Com a flor da noite em uma boate aqui na zona sul
+A dor do amor é com outro amor que a gente cura
+Vim curar a dor desse mal de amor na boate azul
 
-E maravilhosa, ah, ah, ah
-Bonita e cheirosa, ah, ah, ah
-Ô boca gostosa, ah, ah, ah
-Eu tô pra ver vaqueiro não se apaixonar
+E quando a noite vai se agonizando no clarão da aurora
+Os integrantes da vida noturna se foram dormir
+E a dama da noite que estava comigo também foi embora
+Fecharam-se as portas, sozinho de novo tive que sair
 
-E maravilhosa, ah, ah, ah
-Bonita e cheirosa, ah, ah
-Ô boca gostosa, ah, ah, ah
-Eu tô pra ver vaqueiro não se apaixonar
+Sair de que jeito se nem sei o rumo para onde vou
+Muito vagamente me lembro que estou
+Em uma boate aqui na zona sul
+Eu bebi demais e não consigo me lembrar sequer
+Qual era o nome daquela mulher
+A flor da noite na boate azul
 
-Eu disse: De cabelo preto, de chapéu e bota
-Ô, do jeitinho que o vaqueiro gosta
-Diferenciada, isso que é mulher
-Corre vaquejada, dança forró e toma Dreher
+E quando a noite vai se agonizando no clarão da aurora
+Os integrantes da vida noturna se foram dormir
+E a dama da noite que estava comigo também foi embora
+Fecharam-se as portas, sozinho de novo tive que sair
 
-E maravilhosa, ah, ah, ah
-Bonita e cheirosa, ah, ah, ah
-Ô boca gostosa, ah, ah, ah
-Eu tô pra ver vaqueiro não se apaixonar
-
-E maravilhosa, ah, ah, ah
-Bonita e cheirosa, ah, ah
-Ô boca gostosa, ah, ah, ah
-Eu tô pra ver vaqueiro não se apaixonar
-
-E do jeitinho que o vaqueiro gosta')
+Sair de que jeito se nem sei o rumo para onde vou
+Muito vagamente me lembro que estou
+Em uma boate aqui na zona sul
+Eu bebi demais e não consigo me lembrar sequer
+Qual era o nome daquela mulher
+A flor da noite na boate azul')
