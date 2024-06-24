@@ -1,22 +1,18 @@
-create table endereco(
-    id int PRIMARY KEY AUTO_INCREMENT,
-    rua varchar(200),
-    cidade varchar(100),
-    estado varchar(100)
-);
-
 create table artista(
     id int PRIMARY KEY AUTO_INCREMENT,
-    id_endereco int,
     nome_artista varchar(100),
-    FOREIGN KEY (id_endereco) REFERENCES endereco(id)
+     rua varchar(200),
+    cidade varchar(100),
+    estado varchar(100)
+   
 );
 
 create table compositor(
     id int PRIMARY KEY AUTO_INCREMENT,
-    id_endereco int,
     nome_compositor varchar(100),
-    FOREIGN KEY (id_endereco) REFERENCES endereco(id)
+    rua varchar(200),
+    cidade varchar(100),
+    estado varchar(100)
 );
 
 create table genero (
