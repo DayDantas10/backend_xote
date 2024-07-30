@@ -3,8 +3,9 @@ create table artista(
     nome_artista varchar(100),
      rua varchar(200),
     cidade varchar(100),
-    estado varchar(100)
-   
+    estado varchar(100).
+    id_genero int,
+    FOREIGN KEY (id_genero) REFERENCES genero(id)
 );
 
 create table compositor(

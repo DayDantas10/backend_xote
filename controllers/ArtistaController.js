@@ -40,6 +40,12 @@ router.get("/:nome", (req, res) => {
   executarConsulta("SELECT * FROM artista WHERE nome_artista like '?%'", [nome], res, "Erro na consulta de artista");
 });
 
+// Rota para buscar uma artista por gênero
+router.get("/bygenero/:id_genero", (req, res) => {
+  const id_genero = req.params.id_genero;
+  executarConsulta("SELECT * FROM artista WHERE id_genero = ?", [id_genero], res, "Erro na consulta de artista");
+});
+
 // Rota para criar uma novo artista
 router.post('/', (req, res) => {
   const {nome, endereco} = req.body;
