@@ -1,11 +1,14 @@
 INSERT into genero (nome_genero) values('MPB');
 INSERT into genero (nome_genero) values('Forró');
-
+INSERT into genero (nome_genero) values('Sertanejo');
+INSERT into genero (nome_genero) values('Samba');
+INSERT into genero (nome_genero) values('');
 --DELETE FROM genero WHERE id = 1;
 
 
 INSERT into artista(nome_artista, rua, cidade, estado, id_genero) values('Nanda', 'Rua 1', 'Natal', 'RN', 1);
 INSERT into artista(nome_artista, rua, cidade, estado, id_genero) values('Stephane', 'Rua 2', 'Lajes', 'RN', 1);
+INSERT into artista(nome_artista, rua, cidade, estado, id_genero) values('Maria', 'Rua 2', 'Lajes', 'RN', 2);
 
 
 INSERT INTO musica (nome, id_artista, id_compositor, id_genero, letra) VALUES ('Boate Azul', 1,1 ,1, 
