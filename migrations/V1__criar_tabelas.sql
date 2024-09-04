@@ -1,3 +1,8 @@
+create table genero (
+    id int PRIMARY KEY AUTO_INCREMENT,
+    nome_genero varchar(100)
+);
+
 create table artista(
     id int PRIMARY KEY AUTO_INCREMENT,
     nome_artista varchar(100),
@@ -15,11 +20,6 @@ create table compositor(
     rua varchar(200),
     cidade varchar(100),
     estado varchar(100)
-);
-
-create table genero (
-    id int PRIMARY KEY AUTO_INCREMENT,
-    nome_genero varchar(100)
 );
 
 create table musica (
