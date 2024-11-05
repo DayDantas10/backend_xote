@@ -2,6 +2,7 @@ require('dotenv').config();
 const helmet = require("helmet");
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const musicaRouter = require('./controllers/MusicaController');
 const generoRouter = require('./controllers/GeneroController');
 const compositorRouter = require('./controllers/CompositorController');
@@ -19,6 +20,8 @@ app.use(express.json());
 // Habilita o CORS para permitir requisições de diferentes origens.
 app.use(cors());
 app.use(helmet());
+
+app.use('/images', express.static(path.join(__dirname, 'public', 'images'))); //adicionado dia 05/11
 
 // Define a rota "/tarefas" e associa ao router importado.
 app.use("/musicas", musicaRouter);
