@@ -10,7 +10,8 @@ INSERT into artista(nome_artista, rua, cidade, estado, id_genero) values('Nanda'
 INSERT into artista(nome_artista, rua, cidade, estado, id_genero) values('Stephane', 'Rua 2', 'Lajes', 'RN', 1);
 INSERT into artista(nome_artista, rua, cidade, estado, id_genero) values('Maria', 'Rua 2', 'Lajes', 'RN', 2);
 
-
+INSERT INTO entrevista (id_artista, nome, imagem, dados_entrevista) values ('1', 'Artista1', 'arthurdenis.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, dolor quasi dicta aliquam voluptas, debitis earum impedit sequi, 
+eaque sunt quaerat animi officia voluptate in. Veritatis sapiente possimus quos nulla.')
 INSERT INTO musica (nome, id_artista, id_compositor, id_genero, letra) VALUES ('Boate Azul', 1,1 ,1, 
                                                                                'Doente de amor, procurei remédio na vida noturna
 Com a flor da noite em uma boate aqui na zona sul

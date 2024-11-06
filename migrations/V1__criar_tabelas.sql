@@ -38,6 +38,7 @@ create table entrevista(
     id int PRIMARY KEY AUTO_INCREMENT,
     id_artista int,
     nome varchar(200),
+    imagem varchar(100),
     dados_entrevista varchar(65535),
     FOREIGN KEY (id_artista) REFERENCES artista(id)
 );
